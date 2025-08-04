@@ -6,3 +6,45 @@
     padding-left: 10px;
     overflow-x: hidden;
  }
+ .custom-html-styles{
+   padding-left: 80px ;
+   padding-right: 80px ;
+   text-align: center;
+ }
+ .custom-html-styles h2 {
+  color: #00D0E7;
+  font-size: 28px;
+  font-weight: bold;
+}
+ .custom-html-styles h3 {
+  color: #00D0E7;
+  font-size: 28px;
+  font-weight: bold;
+}
+.custom-html-styles p {
+    color: white;
+  font-size: 16px;
+}
+
+.custom-html-styles li{
+   color: white;
+   list-style: circle;
+   text-align: start;
+}
+.custom-html-styles img {
+  display: block;
+  margin: 20px auto;
+  width: 65%;
+  height: auto;
+  border-radius: 8px;
+}
+.custom-html-styles  strong{
+   
+    
+    
+    
+}
+.custom-html-styles a{
+    color: #00D0E7;
+    text-decoration: underline;
+}

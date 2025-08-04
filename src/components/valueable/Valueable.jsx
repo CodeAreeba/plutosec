@@ -4,6 +4,18 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import zemalt from "../../assets/zemalt.png";
 import broadium from "../../assets/Brodium.png";
 import utho from "../../assets/utho.png";
+import cleved from "../../assets/cleved.png";
+import cpa from "../../assets/cpa.png";
+import cql from "../../assets/cql.png";
+import dharna from "../../assets/dharna.png";
+import insurance from "../../assets/insurance.png";
+import lowest from "../../assets/lowest.png";
+import mhc from "../../assets/mhc.png";
+import negup from "../../assets/negup.png";
+import paramed from "../../assets/paramed.png";
+import prasad from "../../assets/prasad.png";
+import rh from "../../assets/rh.png";
+import srj from "../../assets/srj.png";
 
 const Valueable = () => {
   const myData = [
@@ -19,6 +31,7 @@ const Valueable = () => {
       image: utho,
       name: "Utho",
     },
+     
   ];
   return (
     <>
@@ -58,6 +71,12 @@ const Valueable = () => {
                 </h4>
               </div>
             </div>
+          ))}
+        </div>
+        <div className="flex gap-2 p-3">
+         { [1,2,3,4,5].map((btn) => (
+
+            <div key={btn} className="w-5 h-5 rounded-full bg-gray-400"></div>
           ))}
         </div>
       </div>
