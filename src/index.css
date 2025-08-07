@@ -43,6 +43,11 @@
     color: #00D0E7;
     text-decoration: underline;
 }
+
+.custom-service a{
+  color: #00D0E7;
+    text-decoration: underline;
+}
 @media (max-width: 1024px) {
   .custom-html-styles {
     padding-left: 40px;

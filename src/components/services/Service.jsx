@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Service = () => {
   const [userData, setUserData] = useState([]);
@@ -46,12 +47,13 @@ const Service = () => {
        
 <div className="flex-1 grid grid-cols-2 gap-3 max-h-120 overflow-y-auto px-3">
   {userData[selectedIndex]?.data?.map((item, idx) => (
-    <p
+    <Link
+      to={`services/${item.slug}`}
       key={idx}
       className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed text-center md:text-left gap-3 hover:text-[#00D0E7]"
     >
       {item.title}
-    </p>
+    </Link>
   ))}
 </div>
 

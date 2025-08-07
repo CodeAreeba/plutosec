@@ -95,23 +95,23 @@ const Navbar = () => {
          
       </nav>
         
- <div className={`fixed mt-15 left-0 w-full h-screen bg-black z-50 ${menuToggle ? "flex" : "hidden"} md:hidden`}>
-  <div className="flex flex-col w-full gap-1 text-white font-medium text-lg mt-20 px-4">
-    <div className="px-2 py-3 border-b border-[#696969] cursor-pointer">
-      Services  
-    </div> 
-    <div className="px-2 py-3 border-b border-[#696969] cursor-pointer">
-      Industries
-    </div>
-    <div className="px-2 py-3 border-b border-[#696969] cursor-pointer">
-      Why Us
-    </div>
-    <div className="px-2 py-3 border-b border-[#696969] cursor-pointer">
-      Careers
-    </div>
-    <div className="px-2 py-3 border-b border-[#696969] cursor-pointer">
-      Contact Us
-    </div>
+ <div className={`fixed -mt-13  left-0 w-full h-screen bg-black z-50 ${menuToggle ? "flex" : "hidden"} md:hidden`}>
+  <div className="flex flex-col w-full gap-1 text-white font-medium text-lg mt-10 px-4">
+     <div to="" className="px-2 py-3 border-b border-[#696969] cursor-pointer">
+  Services
+</div>
+<Link to={`industries`} onClick={showMenu} className="px-2 py-3 border-b border-[#696969] cursor-pointer">
+  Industries
+</Link>
+<Link to={`whyus`} onClick={showMenu} className="px-2 py-3 border-b border-[#696969] cursor-pointer">
+  Why Us
+</Link>
+<Link to={`careers`} onClick={showMenu} className="px-2 py-3 border-b border-[#696969] cursor-pointer">
+  Careers
+</Link>
+<Link to={`contact`} onClick={showMenu} className="px-2 py-3 border-b border-[#696969] cursor-pointer">
+  Contact Us
+</Link>
   </div>
 </div>
 
