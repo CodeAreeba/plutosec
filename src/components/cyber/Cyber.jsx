@@ -20,7 +20,7 @@ const Cyber = () => {
             <FaArrowRightLong />
           </span>
         </div>
-         <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl mb-6 leading-relaxed py-4 px-2 sm:px-4 w-full md:w-[80%] lg:w-[60%]">
+         <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-lg mb-6 leading-relaxed py-4 px-2 sm:px-4 w-full md:w-[80%] lg:w-[60%]">
   Plutosec offers a range of cybersecurity solutions to protect your
   organization from evolving threats. Our services are designed to
   strengthen your security across multiple platforms.

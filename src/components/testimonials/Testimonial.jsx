@@ -50,7 +50,7 @@ const Testimonial = () => {
       key={index}
       className="relative bg-neutral-900 rounded-lg px-4 py-6 mb-10 flex flex-col 
                  items-center justify-center text-center 
-                 shadow-[0_0_20px_#00D0E7] hover:shadow-none 
+                 shadow-[0_0_12px_#00D0E7] hover:shadow-none 
                  hover:-translate-y-2 transition-all duration-300 ease-in-out
                  w-full sm:w-[48%] lg:w-[30%]"
     >

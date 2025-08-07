@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import heading from "../../assets/headingimg.svg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import zemalt from "../../assets/zemalt.png";
@@ -17,22 +17,80 @@ import prasad from "../../assets/prasad.png";
 import rh from "../../assets/rh.png";
 import srj from "../../assets/srj.png";
 
-const Valueable = () => {
+const Valueable = () => { 
   const myData = [
-    {
-      image: zemalt,
-      name: "Zemalt PVT LTD",
-    },
-    {
-      image: broadium,
-      name: "Broadium",
-    },
-    {
-      image: utho,
-      name: "Utho",
-    },
-     
+  {
+    image: zemalt,
+    name: "Zemalt PVT LTD",
+  },
+  {
+    image: broadium,
+    name: "Broadium",
+  },
+  {
+    image: utho,
+    name: "Utho",
+  },
+  {
+    image: cleved,
+    name: "Cleved",
+  },
+  {
+    image: cpa,
+    name: "CPA",
+  },
+  {
+    image: cql,
+    name: "CQL",
+  },
+  {
+    image: dharna,
+    name: "Dharna",
+  },
+  {
+    image: insurance,
+    name: "Insurance",
+  },
+  {
+    image: lowest,
+    name: "Lowest",
+  },
+  {
+    image: mhc,
+    name: "MHC",
+  },
+  {
+    image: negup,
+    name: "Negup",
+  },
+  {
+    image: paramed,
+    name: "Paramed",
+  },
+  {
+    image: prasad,
+    name: "Prasad",
+  },
+  {
+    image: rh,
+    name: "RH",
+  },
+  {
+    image: srj,
+    name: "SRJ",
+  },
+];
+ const pages = [
+    [myData[0], myData[1], myData[2]],
+    [myData[3], myData[4], myData[5]],
+    [myData[6], myData[7], myData[8]],
+    [myData[9], myData[10], myData[11]],
+    [myData[12], myData[13], myData[14]],
   ];
+ 
+const [currentPage,setCurrentPage] = useState(0);
+
+
   return (
     <>
       <div className="px-4 md:px-10 lg:px-15 mt-10">
@@ -58,8 +116,10 @@ const Valueable = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex md:flex-row  gap-10">
-          {myData.map((data) => (
-            <div className="max-w-[100%] md:max-w-[30%]">
+          {
+          
+          pages[currentPage].map((data,index) => (
+            <div key={index} className="max-w-[100%] md:max-w-[30%]">
               <img
                 src={data.image}
                 alt=""
@@ -74,10 +134,14 @@ const Valueable = () => {
           ))}
         </div>
         <div className="flex gap-2 p-3">
-         { [1,2,3,4,5].map((btn) => (
+         { pages.map((_,id) => (
 
-            <div key={btn} className="w-5 h-5 rounded-full bg-gray-400"></div>
+            <div key={id} 
+            onClick={() => setCurrentPage(id)}
+            className={`w-3 h-3 rounded-full  ${currentPage === id ? ("bg-[#00D0E7] w-6" ): ("bg-white  ")} `}></div>
           ))}
+
+           
         </div>
       </div>
     </>

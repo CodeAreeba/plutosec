@@ -114,7 +114,7 @@ const Rightmain = () => {
   return (
     <div
       className="w-[100%] h-[350px] bg-black/50 rounded-lg shadow-lg flex flex-col overflow-hidden relative max-md:w-[90%] max-md:h-[200px] border border-[#00D0E7] rounded-full shadow-[#00D0E7]/50 mr-10"
-      style={{ boxShadow: "0 0 20px #00D0E7" }}
+      style={{ boxShadow: "0 0 10px #00D0E7" }}
     >
       
       <div className="bg-[#1E1E1E] flex items-center px-3 py-1 gap-2 border-b border-[#333] cursor-move">

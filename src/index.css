@@ -28,7 +28,7 @@
 
 .custom-html-styles li{
    color: white;
-   list-style: circle;
+   list-style:disc;
    text-align: start;
 }
 .custom-html-styles img {
@@ -38,13 +38,58 @@
   height: auto;
   border-radius: 8px;
 }
-.custom-html-styles  strong{
-   
-    
-    
-    
-}
+ 
 .custom-html-styles a{
     color: #00D0E7;
     text-decoration: underline;
+}
+@media (max-width: 1024px) {
+  .custom-html-styles {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .custom-html-styles img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-html-styles {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .custom-html-styles h2,
+  .custom-html-styles h3 {
+    font-size: 22px;
+  }
+
+  .custom-html-styles p {
+    font-size: 15px;
+  }
+
+  .custom-html-styles img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-html-styles {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .custom-html-styles h2,
+  .custom-html-styles h3 {
+    font-size: 20px;
+  }
+
+  .custom-html-styles p {
+    font-size: 14px;
+  }
+
+  .custom-html-styles img {
+    width: 100%;
+  }
 }

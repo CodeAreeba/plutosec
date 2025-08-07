@@ -5,13 +5,16 @@ import { useNavigate } from "react-router-dom";
 const BlogCard = () => {
  const [userData, setUserData] = useState([]);
  const navigate = useNavigate();
+ const [loading,setLoading] = useState(false);
 
  const openBlog = (blog) => {
   navigate(`blog/${blog.slug}`)
  }
 
 useEffect(() => {
+     
     const getData = async () => {
+      setLoading(true);
       try {
         const res = await axios.get(
           "https://plutosec.ca/backend/api/blog/list?limit=3&page=1"
@@ -21,8 +24,12 @@ useEffect(() => {
       } catch (err) {
         console.error(err);
       }
+      finally{
+        setLoading(false);
+      }
     };
     getData();
+
   }, []);
   console.log(userData);
   // const BlogData = [
@@ -47,15 +54,24 @@ useEffect(() => {
   // ];
 
   return (
-    <div className="flex flex-col gap-10">
-      {userData.map((blog,index) => {
+    <div className="flex flex-col gap-7">
+      {loading ? (
+        // <p className="text-white">Loading...</p>
+         <div className="flex items-center justify-center h-screen bg-black">
+        <div className="relative flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-[#00D0E7] border-t-transparent rounded-full animate-spin"></div>
+        <span className="absolute text-[#00D0E7] text-sm font-bold">Blog Cards</span>
+      </div>
+    </div>
+      ):( userData &&
+      userData.map((blog,index) => {
         const dateObj = new Date(blog.createdAt);
         const monthName = dateObj.toLocaleString('en-US', { month: 'short' });
         const dateOnly = String(dateObj.getDate()).padStart(2, '0');
         return(
         <div
           key={index}
-          className="w-full bg-neutral-900 rounded-lg px-3 py-6 flex shadow-[0_0_20px_#00D0E7] hover:shadow-none hover:-translate-y-2 transition-all duration-300 ease-in-out flex-col md:flex-row"
+          className="w-full bg-neutral-900 rounded-lg px-3 py-3 flex shadow-[0_0_10px_#00D0E7] hover:shadow-none hover:-translate-y-2 transition-all duration-300 ease-in-out flex-col md:flex-row"
           onClick={() => openBlog(blog)}
         >
            
@@ -66,17 +82,17 @@ useEffect(() => {
 
           
           <div className="flex flex-col justify-start items-start px-4 md:border-l border-[#696969]">
-            <h2 className="text-2xl font-bold mt-4 text-[#00D0E7]">{blog.title}</h2>
-            <p className="text-gray-300 text-lg leading-relaxed py-5">
+            <h2 className="text-2xl font-bold mt-2 text-[#00D0E7]">{blog.title}</h2>
+            <p className="text-gray-300 text-base leading-relaxed py-2">
               {blog.description}
             </p>
-            <button className="bg-[#00D0E7] text-black font-semibold px-4 py-1 rounded-full">
-              cyber security
+            <button className="bg-[#00D0E7] text-sm text-black font-semibold px-4 py-1 rounded-full">
+              {blog.category.name}
             </button>
           </div>
         </div>);
 
-})}
+}))}
       {/* {BlogData.map((blog, index) => (
         <div
           key={index}

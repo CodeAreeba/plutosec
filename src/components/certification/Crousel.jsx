@@ -45,18 +45,19 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="w-[800px] h-[120px] overflow-hidden mx-auto relative">
-      <div ref={containerRef} className="flex">
-        {images.map((img, idx) => (
-          <img
-            key={idx}
-            src={img}
-            alt={`certificate-${idx}`}
-            className="w-[200px] h-[120px] object-contain flex-shrink-0"
-          />
-        ))}
-      </div>
-    </div>
+     <div className="w-full max-w-[800px] h-[100px] sm:h-[120px] overflow-hidden mx-auto relative">
+  <div ref={containerRef} className="flex">
+    {images.map((img, idx) => (
+      <img
+        key={idx}
+        src={img}
+        alt={`certificate-${idx}`}
+        className="w-[140px] sm:w-[180px] md:w-[200px] h-[100px] sm:h-[120px] object-contain flex-shrink-0"
+      />
+    ))}
+  </div>
+</div>
+
   );
 };
 

@@ -13,9 +13,9 @@ const Clients = () => {
         <img src={heading} alt="" className="hidden sm:block w-20 sm:w-28 md:w-36" />
       </div>
 
-      {/* Responsive Card Grid */}
+       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* First card */}
+      
         <div className="bg-[#00D0E7] rounded-lg px-4 py-8 text-center">
           <h4 className="text-xl font-medium text-black mb-3">Excellent</h4>
           <div className="flex justify-center gap-1 text-lg mb-2 text-black">
@@ -36,11 +36,11 @@ const Clients = () => {
           </div>
         </div>
 
-        {/* Repeated client cards */}
+        
         {[1, 2, 3].map((_, index) => (
           <div
             key={index}
-            className="bg-neutral-900 rounded-lg px-4 py-6 text-center shadow-[0_0_20px_#00D0E7]"
+            className="bg-neutral-900 rounded-lg px-4 py-6 text-center shadow-[0_0_10px_#00D0E7]"
           >
             <h4 className="text-xl font-medium text-[#00D0E7] mb-3">
               Ema Rodriguiz

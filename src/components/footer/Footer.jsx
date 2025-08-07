@@ -12,7 +12,7 @@ import { MdOutlineMail } from "react-icons/md";
 const Footer = () => {
   return (
     <>
-       <div className="flex flex-col justify-start md:flex-row bg-black gap-8 px-6 md:px-20 py-10 md:justify-center md:items-center md:items-start">
+       <div className="flex flex-col justify-start md:flex-row bg-black gap-8 px-6 md:px-20 py-10 md:justify-center md:items-center md:items-start mt-10">
   <div className="w-full md:w-1/4 text-center md:text-left">
     <div className="flex justify-center md:justify-start">
       <img src={logo} alt="Plutosec" className="w-40" />

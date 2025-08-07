@@ -5,6 +5,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import Service from "../services/Service";
 import { IoMenu } from "react-icons/io5"; 
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,6 +17,10 @@ const Navbar = () => {
     setMenuClose(!menuClose);
   }
 
+  const navigate = useNavigate();
+  const showIndustry= () => {
+    navigate(`industries`)
+  }
 
   return (
     <>
@@ -29,7 +34,7 @@ const Navbar = () => {
          
           <div
             className="hidden md:flex border border-[#00D0E7] rounded-full shadow-[#00D0E7]/50 "
-            style={{ boxShadow: "0 0 20px #00D0E7" }}
+            style={{ boxShadow: "0 0 12px #00D0E7" }}
           >
             <ul className="flex items-center gap-10 text-white font-medium text-lg">
               <div
@@ -53,19 +58,14 @@ const Navbar = () => {
                   <Service />
                 </div>
               </div>
- 
-              <li className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">
-                Industries
-              </li>
-              <li className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">
-                Why Us
-              </li>
-              <li className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">
-                Careers
-              </li>
-              <li className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">
-                Contact Us
-              </li>
+                <Link to={`industries`} className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">Industries </Link>
+               
+                <Link to={`whyus`} className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">Why Us</Link>
+               
+               <Link to={`careers`} className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">Careers</Link>
+               
+                <Link to={`contact`} className="px-2 py-3 hover:bg-[#00D0E7] hover:text-black cursor-pointer rounded-full">Contact Us</Link>
+               
             </ul>
           </div>
 
