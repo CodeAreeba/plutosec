@@ -57,11 +57,10 @@ useEffect(() => {
     <div className="flex flex-col gap-7">
       {loading ? (
         // <p className="text-white">Loading...</p>
-         <div className="flex items-center justify-center h-screen bg-black">
-        <div className="relative flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-[#00D0E7] border-t-transparent rounded-full animate-spin"></div>
-        <span className="absolute text-[#00D0E7] text-sm font-bold">Blog Cards</span>
-      </div>
+          <div className="flex items-center justify-center h-screen bg-black space-x-2">
+      <div className="w-4 h-4 bg-[#00D0E7] rounded-full animate-bounce"></div>
+      <div className="w-4 h-4 bg-[#00D0E7] rounded-full animate-bounce [animation-delay:0.2s]"></div>
+      <div className="w-4 h-4 bg-[#00D0E7] rounded-full animate-bounce [animation-delay:0.4s]"></div>
     </div>
       ):( userData &&
       userData.map((blog,index) => {

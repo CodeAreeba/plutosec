@@ -32,7 +32,11 @@ const Subseervice = () => {
   return (
     <div className="px-1 md:px-2 py-6">
       {loading ? (
-        <p className="text-center text-white">Loading...</p>
+         <div className="flex items-center justify-center h-screen bg-black space-x-2">
+      <div className="w-4 h-4 bg-[#00D0E7] rounded-full animate-bounce"></div>
+      <div className="w-4 h-4 bg-[#00D0E7] rounded-full animate-bounce [animation-delay:0.2s]"></div>
+      <div className="w-4 h-4 bg-[#00D0E7] rounded-full animate-bounce [animation-delay:0.4s]"></div>
+    </div>
       ) : userData ? (
         <>
           <div>
@@ -78,7 +82,7 @@ const Subseervice = () => {
               <div>
                 
                 {userData.offerings[selectedIndex].items.map((data, index) => (
-                  <ul className="text-white list-disc px-7 ">
+                  <ul key={index} className="text-white list-disc px-7 ">
                     <li> {data}</li>
                   </ul>
                 ))}
