@@ -1,6 +1,6 @@
- import React, { useState, useEffect } from "react";
- import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchBlogs } from "../../utils/fetch";
 
 const BlogCard = () => {
  const [userData, setUserData] = useState([]);
@@ -16,10 +16,11 @@ useEffect(() => {
     const getData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(
-          "https://plutosec.ca/backend/api/blog/list?limit=3&page=1"
-        );
-        setUserData(res.data.blogs);
+        const res =await fetchBlogs();
+        // const res = await axios.get(
+        //   "https://plutosec.ca/backend/api/blog/list?limit=3&page=1"
+        // );
+        setUserData(res.blogs);
         
       } catch (err) {
         console.error(err);

@@ -7,6 +7,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { IoLogoTiktok } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import HeaderBanner from "./HeaderBanner";
+import { showBlog } from "../../../utils/fetch";
+import { baseUrl } from "../../../config/config";
 
 const BlogHead = ({ slug }) => {
   const [userData, setUserData] = useState(null);
@@ -16,10 +18,11 @@ const BlogHead = ({ slug }) => {
     const getData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(
-          `https://plutosec.ca/backend/api/blog/view/${slug}`
-        );
-        setUserData(res.data.blog);
+        const res = await showBlog(slug);
+        // const res = await axios.get(
+        //   `https://plutosec.ca/backend/api/blog/view/${slug}`
+        // );
+        setUserData(res.blog);
       } catch (err) {
         console.error(err);
       }
@@ -29,7 +32,7 @@ const BlogHead = ({ slug }) => {
     };
     getData();
   }, []);
-
+  // console.log(userData);
   const dateObj = userData ? new Date(userData.createdAt) : null;
 
   const formatDate = () => {
@@ -84,7 +87,7 @@ const BlogHead = ({ slug }) => {
         
             <img
               className="w-full lg:w-[65%] h-auto rounded-md"
-              src={`https://plutosec.ca/backend/api${userData.thumbnail}`}
+              src={`${baseUrl}${userData.thumbnail}`}
               alt=""
             />
 

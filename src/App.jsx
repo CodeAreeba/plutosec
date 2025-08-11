@@ -17,11 +17,25 @@ function App() {
         <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="blog/:slug" element={<Blog />} />
-        <Route path="industries" element={<Industries />} />
-        <Route path="whyus" element={<Whyus />} />
+
+        <Route path="industries">
+          <Route index element={<Industries />} />
+          <Route path="blog/:slug" element={<Blog />} />
+        </Route>
+        
+        <Route path="whyus">
+          <Route index element={<Whyus />} />
+          <Route path="blog/:slug" element={<Blog />} />
+        </Route>
+         
         <Route path="careers" element={<Careers />} />
         <Route path="contact" element={<ContactUs />} />
-        <Route path="services/:slug" element={<Service />} />
+
+        <Route path="services/:slug">
+          <Route index element={<Service />} />
+          <Route path="blog/:slug" element={<Blog />} />
+        </Route>
+
       </Route>
     </Routes>
     </>

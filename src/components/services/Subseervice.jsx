@@ -4,6 +4,7 @@ import axios from "axios";
 import heading from "../../assets/headingimg.svg";
 import offering from "../../assets/keyofferings.jpg";
 import servicebg from "../../assets/storiesbg.jpg";
+import { showServiceDetails } from "../../utils/fetch";
 
 const Subseervice = () => {
   const { slug } = useParams();
@@ -16,10 +17,11 @@ const Subseervice = () => {
     const getData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(
-          `https://plutosec.ca/backend/api/service/view/${slug}`
-        );
-        setUserData(res.data.service);
+        const res = await showServiceDetails(slug)
+        // const res = await axios.get(
+        //   `https://plutosec.ca/backend/api/service/view/${slug}`
+        // );
+        setUserData(res.service);
       } catch (err) {
         console.error(err);
       } finally {

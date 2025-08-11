@@ -3,6 +3,7 @@ import HeaderBanner from '../components/blogs/blogpage/HeaderBanner'
 import IndData from '../components/industries/IndData'
 import Testimonial from '../components/testimonials/Testimonial'
 import Blogs from '../components/blogs/Blogs'
+import { Outlet } from 'react-router-dom'
 
 const Industries = () => {
   return (
@@ -11,7 +12,7 @@ const Industries = () => {
      <HeaderBanner />
      <IndData />
      <Testimonial />
-    <Blogs />
+     <Blogs />
      </div>
      </>
   )

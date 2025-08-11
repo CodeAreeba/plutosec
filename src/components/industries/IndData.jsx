@@ -11,8 +11,8 @@ const IndData = () => {
 </p>
 <div className='py-5 mt-5 flex-col flex md:flex-wrap md:flex-row gap-10  '>
 {
-    buttonData.map((data) => (
-        <div className='w-[full] md:w-[30%] bg-neutral-900 shadow-[0_0_10px_#00D0E7] hover:shadow-none 
+    buttonData.map((data,index) => (
+        <div key={index} className='w-[full] md:w-[30%] bg-neutral-900 shadow-[0_0_10px_#00D0E7] hover:shadow-none 
           hover:-translate-y-2 transition-all duration-300 ease-in-out rounded-md'>
         <h2 className='text-3xl font-bold text-[#00D0E7] py-7 text-center'>{data}</h2>
     </div>

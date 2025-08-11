@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { showService } from "../../utils/fetch";
+import { baseUrl } from "../../config/config";
 
 const Service = () => {
   const [userData, setUserData] = useState([]);
@@ -9,16 +10,19 @@ const Service = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get(
-          "https://plutosec.ca/backend/api/servicecategory/all"
-        );
-        setUserData(res.data.services);
+        const res = await showService();
+        // const res = await axios.get(
+        //   "https://plutosec.ca/backend/api/servicecategory/all"
+        // );
+        setUserData(res.services);
       } catch (err) {
         console.error(err);
       }
     };
     getData();
   }, []);
+
+  console.log(userData);
 
   return (
     <div className="w-[65%] fixed bg-neutral-900 rounded-lg px-3 py-6 flex z-[10] mt-3 -ml-20 gap-6">
@@ -35,7 +39,7 @@ const Service = () => {
             }`}
           >
             <img
-              src={`https://plutosec.ca/backend/api${service.icon}`}
+              src={`${baseUrl}${service.icon}`}
               alt=""
               className="w-10 h-10 mx-auto mb-2"
             />
